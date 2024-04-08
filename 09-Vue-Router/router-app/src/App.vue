@@ -3,11 +3,36 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link :to="{ name: 'about' }">About</router-link> |
-      <router-link :to="{path: '/students'}">Students</router-link>
+      <router-link :to="{path: '/students'}">Students</router-link> |
     </nav>
+    <div>
+      <span @click="anasayfa">Anasayfa</span> |
+      <span @click="geri">Geri</span> |
+      <span @click="ileri">İleri</span>
+    </div>
     <router-view />
   </div>
 </template>
+
+<script>
+
+export default{
+  methods: {
+    anasayfa(){
+      this.$router.push({name: 'home'});
+    },
+    geri(){
+      this.$router.back();
+      // this.$router.go(-1);
+    },
+    ileri(){
+      this.$router.forward();
+      // this.$router.go(1);
+    }
+  },
+}
+</script>
+
 
 <style>
 #app {
