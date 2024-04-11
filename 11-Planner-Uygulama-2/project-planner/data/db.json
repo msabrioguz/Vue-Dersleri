@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": "dc23",
+      "title": "VUEJS Öğreniyorum",
+      "details": "Merhabalar, bu eğitim ile VUEJS öğreniyorum. Oldukça heyecan verici. Bakalım ne kadar yol alabileceğiz.",
+      "complete": true
+    },
+    {
+      "id": "ff34",
+      "title": "ExpressJS ile API Mantığı",
+      "details": "ExpressJS ile API mantığını çözmeye çalışacağım.",
+      "complete": false
+    },
+    {
+      "id": "fe67",
+      "title": "Deneme",
+      "details": "Bu bir deneme yazısıdır.",
+      "complete": true
+    },
+    {
+      "id": "0fc5",
+      "title": "Alışveriş Yap",
+      "details": "Tost için sucuk,\nGazoz,\nTost Ekmeği,\nTatlı",
+      "complete": false
+    },
+    {
+      "id": "da4f",
+      "title": "Deneme",
+      "details": "Deneme",
+      "complete": false
+    }
+  ]
+}
