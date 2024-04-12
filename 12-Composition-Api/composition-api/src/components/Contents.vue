@@ -13,14 +13,20 @@
 <script>
 import { ref } from "vue";
 import getContentsFetch from "../composables/getContentsFetch.js";
+import { useRoute, useRouter } from "vue-router";
 
 export default {
 
     setup(props) {
+
+        const route = useRoute();
+        const router = useRouter();
+
+        console.log('Route: ', route);
+        console.log('Router: ', router);
+
         const {contents, err, getContents} = getContentsFetch();
-
         getContents();
-
         return { contents, err };
     }
 }
