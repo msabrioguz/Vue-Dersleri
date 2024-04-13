@@ -6,7 +6,7 @@
 
 <script>
 import { onMounted } from 'vue';
-import { getFirestore, collection, getDocs, get, addDoc, doc, deleteDoc, query, where, onSnapshot} from 'firebase/firestore';
+import { getFirestore, collection, getDocs, get, addDoc, doc, deleteDoc, updateDoc, query, where, onSnapshot} from 'firebase/firestore';
 import { FireBase } from '../firebase/config.js';
 
 export default {
@@ -35,7 +35,10 @@ export default {
           books.push({...doc.data(), id:doc.id});
         });
         console.log(books);
-      });      
+      });
+
+      const docRef = doc(db, 'books', 'ApDNxqmLdmJUUrOHreLt');
+      updateDoc(docRef, {pageCount:100});
 
       return data;
     })
