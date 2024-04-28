@@ -3,12 +3,12 @@
         <p>Welcome</p>
         <div v-if="showLogin">
             <h2>Login</h2>
-            <LoginForm></LoginForm>
+            <LoginForm @login="enterChat"></LoginForm>
             <p>No account yet? <span @click="showLogin = false">Signup</span></p>
         </div>
         <div v-else="showLogin">
             <h2>Singup</h2>
-            <SingupForm></SingupForm>
+            <SingupForm @signup="enterChat"></SingupForm>
             <p>Already registered? <span @click="showLogin = true">Login</span></p>
         </div>
     </div>
@@ -18,12 +18,17 @@
 import SingupForm from "../components/SingupForm.vue";
 import LoginForm from "../components/LoginForm.vue";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 export default {
     components: { SingupForm, LoginForm },
     setup(){
         const showLogin = ref(true);
+        const router = useRouter();
 
-        return { showLogin };
+        const enterChat = () => {
+            router.push({name: 'chatroom'});
+        }
+        return { showLogin, enterChat };
     }
 }
 </script>
